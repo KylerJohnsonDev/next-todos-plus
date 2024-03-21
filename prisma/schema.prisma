@@ -10,7 +10,15 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Todo {
+model todo_list {
+  id               Int      @id @default(autoincrement())
+  list_name        String
+  list_description String?
+  is_archived      Boolean  @default(false)
+  created_at       DateTime @default(now())
+}
+
+model todo {
   id         Int     @id @default(autoincrement())
   userId     String
   text       String
