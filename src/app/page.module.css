@@ -1,0 +1,18 @@
+.wrapper {
+  line-height: 1.5rem;
+  letter-spacing: .05rem;
+}
+
+.linksContainer {
+  margin-top: 20px;
+}
+
+.linksContainer a {
+  color: #388094;
+  cursor: pointer;
+}
+
+.linksContainer .topLevelListItem:not(:first-child) {
+  margin-top: .5rem;
+}
+
