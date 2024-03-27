@@ -10,17 +10,20 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model todo_list {
+model TodoList {
   id               Int      @id @default(autoincrement())
   list_name        String
   list_description String?
   is_archived      Boolean  @default(false)
   created_at       DateTime @default(now())
+  todos            Todo[]
+  userId           String
 }
 
-model todo {
-  id         Int     @id @default(autoincrement())
-  userId     String
+model Todo {
+  id         Int      @id @default(autoincrement())
   text       String
-  isComplete Boolean @default(false)
+  isComplete Boolean  @default(false)
+  TodoList   TodoList @relation(fields: [todoListId], references: [id])
+  todoListId Int
 }
