@@ -1,0 +1,11 @@
+.createTodoListForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.formItem {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}

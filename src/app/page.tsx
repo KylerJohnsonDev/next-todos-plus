@@ -3,6 +3,7 @@ import classes from "./page.module.css";
 import { TodoList } from "@prisma/client";
 import { fetchTodoListsByUserId } from "@/database/todos";
 import { auth } from "@clerk/nextjs";
+import Link from "next/link";
 
 export default async function Home() {
   const { userId } = auth();
@@ -13,6 +14,7 @@ export default async function Home() {
 
   return (
     <main className={classes.wrapper}>
+      <Link href="/todo-list">New Todo List</Link>
       <h3>Todo Lists</h3>
       { todoLists.length === 0 ? <p>No todo lists found</p> : 
         <ul>
