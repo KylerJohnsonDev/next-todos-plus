@@ -20,5 +20,8 @@ export function fetchTodoListByListId(listId: number) {
     where: {
       id: listId,
     },
+    include: {
+      todos: true,
+    },
   });
 }

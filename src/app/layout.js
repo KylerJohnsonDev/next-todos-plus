@@ -3,6 +3,7 @@ import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { UserButton } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,7 +22,9 @@ export default function RootLayout({ children }) {
       <html lang="en">
         <body className={inter.className}>
           <header className="app-header">
-            <h1>Next Todos</h1>
+            <Link href={"/"}>
+              <h1>Next Todos</h1>
+            </Link>
             <UserButton />
           </header>
           <main>{children}</main>

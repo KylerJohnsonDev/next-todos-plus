@@ -20,6 +20,15 @@ export async function fetchTodoListsByUserId(
 //   });
 // }
 
+export function addNewTodoToList(listId: number, text: string): Promise<Todo> {
+  return prisma.todo.create({
+    data: {
+      text,
+      todoListId: listId,
+    },
+  });
+}
+
 export function updateTodoById(id: number, isComplete: boolean): Promise<Todo> {
   return prisma.todo.update({
     where: {
