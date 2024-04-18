@@ -16,3 +16,9 @@
   margin-top: .5rem;
 }
 
+.todoListSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+

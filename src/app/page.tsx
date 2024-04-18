@@ -17,15 +17,13 @@ export default async function Home() {
       <Link href="/todo-list">New Todo List</Link>
       <h3>Todo Lists</h3>
       { todoLists.length === 0 ? <p>No todo lists found</p> : 
-        <ul>
+        <section className={classes.todoListSection}>
           {
             todoLists.map((todoList) => (
-              <li key={todoList.id}>
-                <h2>{todoList.list_name}</h2>
-              </li>
+              <Link href={`/todo-list/${todoList.id}`} key={todoList.id}>{todoList.list_name}</Link> 
             ))
           }
-        </ul>
+        </section>
       }
     </main>
   );
