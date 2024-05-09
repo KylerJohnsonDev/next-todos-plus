@@ -1,8 +1,6 @@
-import { Inter } from "next/font/google";
 import "./globals.css";
-import { ClerkProvider } from "@clerk/nextjs";
-import { UserButton } from "@clerk/nextjs";
-import { dark } from "@clerk/themes";
+
+import { Inter } from "next/font/google";
 import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -14,22 +12,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <ClerkProvider
-      appearance={{
-        baseTheme: [dark],
-      }}
-    >
       <html lang="en">
         <body className={inter.className}>
           <header className="app-header">
             <Link href={"/"}>
-              <h1>Next Todos</h1>
+              <h1>Listify</h1>
             </Link>
-            <UserButton />
           </header>
           <main>{children}</main>
         </body>
       </html>
-    </ClerkProvider>
   );
 }

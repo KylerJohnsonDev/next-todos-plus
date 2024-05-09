@@ -10,6 +10,13 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model User {
+  userId       String   @id @default(cuid())
+  clerkUserId String @unique
+
+  @@index([clerkUserId], name: "clerkUserId")
+}
+
 model TodoList {
   id               Int      @id @default(autoincrement())
   list_name        String

@@ -12,8 +12,9 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^4.29.1",
-    "@clerk/themes": "^1.7.10",
     "@prisma/client": "^5.7.1",
+    "@supabase/ssr": "^0.3.0",
+    "@supabase/supabase-js": "^2.43.1",
     "next": "14.0.3",
     "react": "^18",
     "react-dom": "^18",
